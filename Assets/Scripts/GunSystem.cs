@@ -23,6 +23,11 @@ public class GunSystem : MonoBehaviour
     public RaycastHit rayHit;
     public TextMeshProUGUI magazineInfoText;
     public TextMeshProUGUI reloadingInfoText;
+    public TextMeshProUGUI textEndGame;
+    public GameObject menu;
+
+    public int numberEnnemyToKill = 5;
+    private int ennemyKilled = 0;
 
     private void Awake()
     {
@@ -57,8 +62,14 @@ public class GunSystem : MonoBehaviour
             if (rayHit.collider.CompareTag("monster"))
             {
                 Destroy(rayHit.collider.gameObject);
+                ennemyKilled++;
+
+                if (ennemyKilled == numberEnnemyToKill)
+                {
+                    Winner();
+                    return;
+                }
             }
-                
         }
 
         //Graphics
@@ -68,6 +79,13 @@ public class GunSystem : MonoBehaviour
         magazineInfoText.SetText(bulletsLeft + " / " + magazineSize);
 
         Invoke("ResetShot", timeBetweenShooting);
+    }
+
+    private void Winner()
+    {
+        menu.gameObject.SetActive(true);
+        Time.timeScale = 0;
+        textEndGame.text = "Vous avez gagner";
     }
 
     private void OnReload()
