@@ -84,6 +84,7 @@ public class GunSystem : MonoBehaviour
     private void Winner()
     {
         menu.gameObject.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
         textEndGame.text = "Vous avez gagner";
     }

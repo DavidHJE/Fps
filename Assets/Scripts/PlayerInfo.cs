@@ -81,6 +81,7 @@ public class PlayerInfo : MonoBehaviour
         Menu.gameObject.SetActive(true);
         /*this.GetComponent<StarterAssetsInputs>().cursorLocked = false;
         this.GetComponent<StarterAssetsInputs>().cursorInputForLook = false;*/
+        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
         textEndGame.text = "Vous avez perdu";
     }

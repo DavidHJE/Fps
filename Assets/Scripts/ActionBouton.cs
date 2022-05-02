@@ -25,8 +25,8 @@ public class ActionBouton : MonoBehaviour
 	{
 		Debug.Log("La partie se recharge");
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
-
+		Time.timeScale = 1f;
+		Cursor.lockState = CursorLockMode.Locked;
 	}
 
 	public void TaskOnClickExit()
