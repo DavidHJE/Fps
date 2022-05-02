@@ -9,4 +9,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Playground.unity
     guid: 707acc8dffb72b144bb1ffbe1c965f3d
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 730c0e4e1e33b824c8cbd5d0e1ac5fc9, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}
